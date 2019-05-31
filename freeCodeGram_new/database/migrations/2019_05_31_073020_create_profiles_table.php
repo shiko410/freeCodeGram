@@ -15,7 +15,15 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
+            #リレーション（unsignedBigInterger）
+            $table->unsignedBigInteger('user_id'); //user_id: userはUserテーブル idはidを自動的に読み込む
+            
+            $table->string('title')->nullable();    //->nullable()は入力してもしなくても良い設定
+            $table->text('description')->nullable();
+            $table->string('url')->nullable();
             $table->timestamps();
+            
+            $table->index('user_id'); // DBリレーションを早く読み込むメソッド
         });
     }
 

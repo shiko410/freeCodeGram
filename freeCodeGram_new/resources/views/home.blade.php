@@ -13,9 +13,9 @@
                 <div class="pr-4"><strong>1234</strong> followers</div>
                 <div class="pr-4"><strong>1324</strong> following</div>
             </div>
-            <div class="pt-4 font-weight-bold">freeCodeGram</div>
-            <div>テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト</div>
-            <div><a href="#">www.freecodegram.org</a></div>
+            <div class="pt-4 font-weight-bold">{{ $info->profile->title }}</div>
+            <div>{{ $info->profile->description }}</div>
+            <div><a href="#">{{ $info->profile->url ?? 'N/A'}}</a></div>
         </div>
     </div>
     
