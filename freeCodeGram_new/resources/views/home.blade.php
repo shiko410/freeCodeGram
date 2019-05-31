@@ -2,21 +2,32 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
+    <div class="row">
+        <div class="col-3 p-5">
+            <img src="https://s3.amazonaws.com/freecodecamp/curriculum-diagram-full.jpg" style="height:80px;" class="rounded-circle">
+        </div>
+        <div class="col-9 pt-5">
+            <div><h1>{{ $info->username }}</h1></div>
+            <div class="d-flex">
+                <div class="pr-4"><strong>1234</strong> posts</div>
+                <div class="pr-4"><strong>1234</strong> followers</div>
+                <div class="pr-4"><strong>1324</strong> following</div>
             </div>
+            <div class="pt-4 font-weight-bold">freeCodeGram</div>
+            <div>テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト・テスト</div>
+            <div><a href="#">www.freecodegram.org</a></div>
+        </div>
+    </div>
+    
+    <div class="row ">
+        <div class="col-4 pt-4">
+            <img src="https://s3.amazonaws.com/freecodecamp/curriculum-diagram-full.jpg" class="w-100">
+        </div>
+        <div class="col-4 pt-4">
+            <img src="https://s3.amazonaws.com/freecodecamp/curriculum-diagram-full.jpg" class="w-100">
+        </div>
+        <div class="col-4 pt-4">
+            <img src="https://s3.amazonaws.com/freecodecamp/curriculum-diagram-full.jpg" class="w-100">
         </div>
     </div>
 </div>
