@@ -10,8 +10,9 @@
         <div class="col-9">
             <div class="d-flex justify-content-between align-items-baseline">
                 <h1>{{ $user->username }}</h1>
-                <a href="/freeCodeGram/public/p/create">Add New Post</a>
+                <a href="/p/create">Add New Post</a>
             </div>
+                <a href="/profile/{{ $user->id }}/edit">Edit Profile</a>
             <div class="d-flex">
                 <div class="pr-5"><strong>{{$user->posts->count() }}</strong> posts</div>
                 <div class="pr-5"><strong>222</strong> followers</div>
@@ -28,7 +29,7 @@
         @foreach($user->posts as $post)
         
             <div class="col-4 pb-4">
-                <a href="#">
+                <a href="/p/{{ $post->id }}">
                     <img 
                     src="/storage/{{ $post->image }}" class="w-100"
                     alt="pic{{ $post->id }}"
