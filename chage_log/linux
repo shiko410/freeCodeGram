@@ -1,0 +1,23 @@
+cloud9tamai:/ $ sudo su
+[root@ip-172-31-48-194 /]# cd / tem
+[root@ip-172-31-48-194 /]# cd /tmp
+[root@ip-172-31-48-194 tmp]# mkdir extundelete
+[root@ip-172-31-48-194 tmp]# ls
+extundelete         npm-5199-1cdb65d0                      tmux-501
+npm-11202-405e002b  php-xdg-runtime-dir-fallback-ec2-user  v8-compile-cache-501
+[root@ip-172-31-48-194 tmp]# curl -L http://sourceforge.net/projects/extundelete/files/extundelete/0.2.4/extundelete-0.2.4.tar.bz2/download | tar xj
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   178  100   178    0     0   1210      0 --:--:-- --:--:-- --:--:--  1210
+100 17884  100 17884    0     0  32107      0 --:--:-- --:--:-- --:--:-- 32107
+100   373  100   373    0     0    433      0 --:--:-- --:--:-- --:--:--   433
+100  105k  100  105k    0     0  75854      0  0:00:01  0:00:01 --:--:--  270k
+[root@ip-172-31-48-194 tmp]# # cd extundelete-0.2.4./configure --prefix=/tmp/a && make && make install
+[root@ip-172-31-48-194 tmp]# df -hT
+Filesystem     Type      Size  Used Avail Use% Mounted on
+devtmpfs       devtmpfs  483M   60K  483M   1% /dev
+tmpfs          tmpfs     493M     0  493M   0% /dev/shm
+/dev/xvda1     ext4      9.8G  7.2G  2.5G  75% /
+[root@ip-172-31-48-194 tmp]# /tmp/a/bin/extundelete --restore-all --after $(date +%s -d '1 hour ago') /dev/xvda1
+bash: /tmp/a/bin/extundelete: No such file or directory
+[root@ip-172-31-48-194 tmp]# exit
